@@ -1,0 +1,37 @@
+Data: 22/03/2017 Rafael Mendes Felix 140159665
+
+1. Dada uma variável 'a' do tipo 'char' (um byte), escreva os trechos de código em C para:
+	(a) Somente setar o bit menos significativo de 'a'.
+		a |= 1;  // "a" igual a "a" ou 1 
+
+	(b) Somente setar dois bits de 'a': o menos significativo e o segundo menos significativo.
+		a|= 3;
+
+	(c) Somente zerar o terceiro bit menos significativo de 'a'.
+		a|= 4;
+
+	(d) Somente zerar o terceiro e o quarto bits menos significativo de 'a'.
+		a|= 12;
+
+	(e) Somente inverter o bit mais significativo de 'a'.
+   		a ^= (1<<7); // "a" xor 1 deslocado 7 casas a esquerda. Inverte o mais significativo
+
+
+	(f) Inverter o nibble mais significativo de 'a', e setar o nibble menos significativo de 'a'.
+		A ^= (15<<4);
+		A |= 15;
+ 
+
+2. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
+
+		P1DIR
+
+
+
+3. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.
+
+4. Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.
+
+5. Reescreva o código da questão 2 usando a função da questão 4.
+
+6. Reescreva o código da questão 3 usando a função da questão 4.
