@@ -1,6 +1,6 @@
 Data: 22/03/2017 Rafael Mendes Felix 140159665
 
-1. Dada uma vari�vel 'a' do tipo 'char' (um byte), escreva os trechos de c�digo em C para:
+1. Dada uma variável 'a' do tipo 'char' (um byte), escreva os trechos de código em C para:
 	(a) Somente setar o bit menos significativo de 'a'.
 		a |= 1;  // "a" igual a "a" ou 1 
 
@@ -22,16 +22,29 @@ Data: 22/03/2017 Rafael Mendes Felix 140159665
 		A |= 15;
  
 
-2. Considerando a placa Launchpad do MSP430, escreva o c�digo em C para piscar os dois LEDs ininterruptamente.
+2. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
+	
+	void delay_ciclos(int a ){  // função delay que pode ser usada futuramente. No caso de a=1000, está fazendo o delay de 1 segundo
+	int i = a;
+	while(i>0){
+		__delay_ciclos(a);
+		i--;
+	}
+}
 
-		P1DIR
+int main(void) {
+	While; // loop no while
+			{
+	P1OUT ^= 1; // está fazendo o switch dos bits dos leds, partindo do princípio da porta xor
+	P1OUT ^= 1;
+	delay_ciclos(1000);
+			}
+		}
 
+3. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.
 
+4. Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.
 
-3. Considerando a placa Launchpad do MSP430, escreva o c�digo em C para piscar duas vezes os dois LEDs sempre que o usu�rio pressionar o bot�o.
+5. Reescreva o código da questão 2 usando a função da questão 4.
 
-4. Considerando a placa Launchpad do MSP430, fa�a uma fun��o em C que pisca os dois LEDs uma vez.
-
-5. Reescreva o c�digo da quest�o 2 usando a fun��o da quest�o 4.
-
-6. Reescreva o c�digo da quest�o 3 usando a fun��o da quest�o 4.
+6. Reescreva o código da questão 3 usando a função da questão 4.
