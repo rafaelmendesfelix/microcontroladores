@@ -1,0 +1,50 @@
+Data: 15/03/2017
+Rafael Mendes Félix 140159665
+
+Q1. Quais as diferenças entre os barramentos de dados e de endereços?
+Os barramentos de dados são utilizados pelo microprocessador para transmitir informações entre diferentes unidades que o compõe podendo ser bidirecional, já os barramentos de endereços e são utilizados para indicar na memória a localização do dado a ser manipulado durante a execução de alguma tarefa.
+
+Q2. Quais são as diferenças entre as memórias RAM e ROM?
+As memórias RAM permitem a gravação e regravação de dados, entretanto são memórias que possuem a característica de serem voláteis, isto é, uma vez que sejam desligadas o conteúdo armazenado nesta memória é perdido. As memórias ROM, uma vez gravada a informação, não permite sua alteração ou remoção de dados, porém após deligadas não perdem os dados armazenados. Outra característica importante é que a escrita é bem mais lenta que do que na memória RAM.
+
+Q3. Considere o código abaixo, de 12 linhas:
+
+    1.   #include <stdio.h>
+    2.   int main(void)
+    3.   {
+    4.      int i;
+    5.      printf("Insira um número inteiro: ");
+    6.      scanf("%d", &i);
+    7.      if(i%2)
+    8.         printf("%d eh impar.\n");
+    9.      else
+   10.         printf("%d eh par.\n");
+   11.      return 0;
+   12.   }
+
+Para este código, responda:
+(a)	A variável 'i' é armazenada na memória RAM ou ROM? Por quê?
+Na RAM, porque não é necessário que o valor de i seja gravado definitivamente. Após desligar o programa o valor pode ser apagado, também requer esta característica para quando o programa for reiniciado.
+
+(b)	O programa compilado a partir deste código é armazenado na memória RAM ou ROM? Por quê?
+Na RAM, porque o valor de saída após o programa ser compilado é dispensável, não é necessário que o programa seja compilado novamente.
+
+Q4. Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
+Na arquitetura Harvard é utilizado espaços diferentes na memória para armazenar dados de memória RAM e da memória ROM, possuindo assim alguns benefícios como: Leitura simultânea de dados e do programa; Barramentos de dados e programas separados e otimizados, armazena dados constantes, como por exemplo as look-up tables, na memória do programa requerendo para isso instruções específicas.
+Na arquitetura Von Neumaan e utilizado o mesmo espaço de memória para a memória RAM e ROM, o que a torna menos eficiente que a arquitetura anterior, pois não permite leituras simultâneas tornando-as lentas. Entretanto, podem possivelmente ser menores e consequentemente ter um menor custo.
+
+Q5. Considere a variável inteira 'i', armazenando o valor 0x8051ABCD. Se 'i' é armazenada na memória a partir do endereço 0x0200, como ficam este byte e os seguintes, considerando que a memória é:
+(a)	Little-endian?
+0x0200: recebe 0xCD;
+0x0201: recebe 0xAB;
+0x0202: recebe 0x51;
+0x0203: recebe 0x80;
+
+(b)	Big-endian?
+0x0200: recebe 0x80;
+0x0201: recebe 0x51;
+0x0202:recebe 0xAB;
+0x0203: recebe 0xCD;
+
+Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas variáveis de 32 bits?
+Ele divide cada variável em dois registradores, então ele soma os registradores de bits menos significativos. Caso ocorra um carry, o registrador R2, fará o seu bit correspondente ao carry 1, depois soma-se os registradores de bits mais significativos, acrescentados do registrador R2. Caso ocorra overflow, o bit V do registrador R2 acusará.
